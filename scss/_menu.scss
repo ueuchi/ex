@@ -1,0 +1,38 @@
+.menu-img {
+    display: flex;
+    justify-content: space-between;
+    @include sp {
+        flex-direction: column;
+        width: 100%;
+    }
+    .content {
+        max-width: 25vw;
+        @include sp {
+            max-width: none;
+            width: 100%;
+        }
+        h2 {
+            font-size: 2.8vw;
+            margin: 2.8vw 0;
+            @include sp {
+                padding: 0 3vw;
+                font-size: 8vw;
+                text-align: left;
+            }
+        }
+        .text {
+            padding: 0 3vw;
+        }
+        .cash {
+            text-align: right;
+            margin: 2.8vw 0;
+        }
+    }
+    .img {
+        height: 25vw;
+        background-size: cover;
+        @include sp {
+            height: 83vw;
+        }
+    }
+}

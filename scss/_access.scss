@@ -1,0 +1,69 @@
+.access-color {
+    background-color: #A193861F;
+    height: 72vw;
+    @include sp {
+        height: 147vw;
+    }
+}
+
+.access-about {
+    height: 41vw;
+    display: flex;
+    background-color: #D0C5BA;
+    @include sp {
+        height: 111vw;
+        padding: 9vw 0;
+        flex-direction: column-reverse;
+    }
+}
+
+.access-content {
+    width: 34%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    margin-right: 0;
+    @include sp {
+        width: 100%;
+    }
+    h3 {
+        color: #00000038;
+        font-size: 2.7vw;
+        @include sp {
+            font-size: 5.7vw;
+        }
+    }
+    ul {
+        color: #FFFFFF;
+        @include sp {
+
+        }
+        li {
+            padding-top: 1vw;
+            @include sp {
+                padding-top: 3vw;
+            }
+        }
+    }
+}
+
+.maps {
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    @include sp {
+        padding-top: 63%
+    }
+  }
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 41vw;
+    width: 100% !important;
+    @include sp {
+        height: 54vw;
+    }
+  }

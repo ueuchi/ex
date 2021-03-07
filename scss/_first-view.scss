@@ -1,0 +1,53 @@
+#first-view {
+    display: flex;
+    height: 70vw;
+    @include sp {
+        height: 146vw;
+    }
+}
+
+.fv-title {
+    width: 46%;
+    // margin: 400px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include sp {
+        margin-top: 43vw;
+        height: 60vw;
+        width: 100%;
+        color: #FFFFFF;
+        text-shadow: 0 3px 16px #000000;
+        position: absolute;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+    }
+    h1 {
+        font-size: 3.4vw;
+        margin-bottom: 50px;
+        font-family: serif;
+        @include sp {
+            font-size: 9vw;
+        }
+    }
+    h2 {
+        margin-top: 50px;
+        font-size: 3.7vw;
+        font-family: "Zapfino";
+        @include sp {
+            font-size: 8vw;
+        }
+    }
+}
+
+.fv-img {
+    width: 54%;
+    background-size: cover;
+    @include sp {
+        object-position: 0% 50%;
+        object-fit: cover;
+        width: 100%;
+        height: auto;
+    }
+}

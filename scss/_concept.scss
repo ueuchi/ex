@@ -1,0 +1,68 @@
+.concept-color {
+    position: relative;
+    .concept-a {
+        height: 34vw;
+        background-color: #A193861F;
+        @include sp {
+            height: 40vw;
+        }
+    }
+    .concept-b {
+        height: 56vw;
+        background-color: #A1938689;
+        @include sp {
+            height: 92vw;
+        }
+    }
+}
+
+.concept {
+    position: absolute;
+    top: 0;
+    width: 84%;
+}
+
+.concept-img {
+    width: 100%;
+    height: 46vw;
+    display: flex;
+    justify-content: space-between;
+    .img-a {
+        width: 63%;
+        object-fit: cover;
+        object-position: center;
+        overflow: hidden;
+        @include sp {
+            object-position: 100% 50%;
+            width: 49%;
+        }
+    }
+    .img-b {
+        width: 36%;
+        object-fit: cover;
+        @include sp {
+            width: 49%;
+        }
+    }
+}
+
+
+
+.concept-text {
+    height: 20vw;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    @include sp {
+        margin: 11vw 0;
+        height: 38vw;
+        flex-direction: column;
+    }
+    h1 {
+        font-size: 3.4vw;
+        letter-spacing: 0.4em;
+        font-family: serif;
+        text-align: center;
+    }
+}

@@ -1,0 +1,40 @@
+#header {
+    @include tab {
+        position: absolute;
+        margin: 5vw 0 0 6.4vw;
+    }
+        display: flex;
+        align-items: center;
+    @include sp {
+        width: 90%;
+        margin: 5%;
+        justify-content: space-between;
+    }
+    ul {
+        height: 2vw;
+        display: flex;
+        justify-content: space-between;
+        @include sp {
+            display: none;
+        }
+    }
+    li {
+        margin: 0 1.2vw;
+        position: relative;
+        font-size: 1.9vw;
+        color: #707070;
+        transition: all 0.3s;
+        &:hover {
+            color: #000000;
+            border-bottom: 1px solid #000000;
+        }
+    }
+}
+
+.header-title {
+    font-size: 3vw;
+
+    @include sp {
+        font-size: 6vw;
+    }
+}
