@@ -25,7 +25,9 @@
     <header>
         <div id="header">
             <div class="header-list">
-                <h1 class="header-title">SALON BEPPU</h1>
+                <a href="#first-view">
+                    <h1 class="header-title">SALON BEPPU</h1>
+                </a>
                 <a href="#menu" class="list">
                     <span class="list-text">MENU</span>
                 </a>
@@ -39,10 +41,18 @@
                     <span class="list-text">RESERVE</span>
                 </a>
             </div>
-            <div class="burger-btn">
-                <span class="bar bar_top"></span>
-                <span class="bar bar_mid"></span>
-                <span class="bar bar_bottom"></span>
+            <div class="nav-btn">
+                <div class="menu-trigger">
+                    <span class="bar bar_top"></span>
+                    <span class="bar bar_mid"></span>
+                    <span class="bar bar_bottom"></span>
+                </div>
+            </div>
+            <div class="nav">
+              <div class="nav__item"><a href="#menu">MENU</a></div>
+              <div class="nav__item"><a href="#concept">CONCEPT</a></div>
+              <div class="nav__item"><a href="#access">ACCESS</a></div>
+              <div class="nav__item"><a href="#footer">RESERVE</a></div>
             </div>
         </div>
     </header>
@@ -66,11 +76,14 @@
                     </div>
                     <div class="concept-text">
                         <h1>髪は、大事です</h1>
-                        <p class="text">テキストテキストテキストテキストテキストテキスト<br>
+                        <p class="text a">テキストテキストテキストテキストテキストテキスト<br>
                             テキストテキストテキストテキストテキストテキスト<br>
                             テキストテキストテキストテキストテキストテキスト<br>
                             テキストテキストテキストテキストテキストテキスト<br>
                             テキストテキストテキストテキストテキストテキスト<br>
+                        </p>
+                        <p class="text b">
+                            テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト。
                         </p>
                     </div>
                 </div>
@@ -138,5 +151,13 @@
             </div>
         </div>
     </footer>
+    <script>
+        $(function(){
+          $('.nav-btn').on('click', function(){
+            $('.nav').toggleClass('active');
+            $('.menu-trigger').toggleClass('active');
+          });
+        }());
+      </script>
 </body>
 </html>
