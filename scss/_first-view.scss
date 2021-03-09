@@ -3,12 +3,12 @@
     height: 70vw;
     @include sp {
         height: 146vw;
+        padding-top: 20vw;
     }
 }
 
 .fv-title {
     width: 46%;
-    // margin: 400px auto;
     display: flex;
     flex-direction: column;
     justify-content: center;

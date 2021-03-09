@@ -1,11 +1,4 @@
 //////////////////
-///    変数     ///
-//////////////////
-
-
-
-
-//////////////////
 ///   mixin    ///
 //////////////////
 
@@ -26,9 +19,6 @@
         @content;
     }
 }
-
-
-
 //////////////////
 ///    共通     ///
 //////////////////
@@ -42,9 +32,10 @@ html {
 }
 
 .wrap {
-    margin: 0 8% !important;
+    margin: 0 8%;
     @include sp {
-        margin: 0 20px;
+        margin: 0;
+        padding: 0 5%;
     }
 }
 
@@ -59,12 +50,16 @@ html {
     align-items: center;
     @include sp {
         padding: 13vw 0;
+        font-size: 3.8vw;
     }
     &:after {
     border-top: 1px solid;
     content: "";
     width: 6em;
     margin-left: 1em;
+    @include sp {
+        width: 3em;
+    }
     }
 }
 
@@ -73,26 +68,7 @@ html {
     line-height: 2.5vw;
     text-align: left;
     @include sp {
-        line-height: 5.5vw;
+        font-size: 4.4vw;
+        line-height: 6.5vw;
     }
 }
-
-.burger-btn{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 4vw;      
-    height: 4.5vw;         
-    z-index: 3;
-    @include tab {
-        display: none;
-    }
-  }    
-  .bar{      
-      width: 4vw;      
-      height: 0.2em;            
-      background-color: #3B4043;    
-  }    
-  .bar_bottom{
-    width: 3vw;
-  }

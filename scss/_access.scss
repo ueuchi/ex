@@ -2,7 +2,7 @@
     background-color: #A193861F;
     height: 72vw;
     @include sp {
-        height: 147vw;
+        height: 158vw;
     }
 }
 
@@ -36,9 +36,6 @@
     }
     ul {
         color: #FFFFFF;
-        @include sp {
-
-        }
         li {
             padding-top: 1vw;
             @include sp {

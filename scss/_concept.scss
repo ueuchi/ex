@@ -8,10 +8,10 @@
         }
     }
     .concept-b {
-        height: 56vw;
+        height: 51vw;
         background-color: #A1938689;
         @include sp {
-            height: 92vw;
+            height: 140vw;
         }
     }
 }
@@ -20,13 +20,19 @@
     position: absolute;
     top: 0;
     width: 84%;
+    @include sp {
+        width: 100%;
+    }
 }
 
 .concept-img {
     width: 100%;
-    height: 46vw;
+    height: 38vw;
     display: flex;
     justify-content: space-between;
+    @include sp {
+        height: 48vw;
+    }
     .img-a {
         width: 63%;
         object-fit: cover;
@@ -49,14 +55,14 @@
 
 
 .concept-text {
-    height: 20vw;
+    height: 21vw;
     color: #FFFFFF;
     display: flex;
     justify-content: space-around;
     align-items: center;
     @include sp {
         margin: 11vw 0;
-        height: 38vw;
+        height: 78vw;
         flex-direction: column;
     }
     h1 {
@@ -64,5 +70,20 @@
         letter-spacing: 0.4em;
         font-family: serif;
         text-align: center;
+        @include sp {
+            font-size: 4.4vw;
+        }
+    }
+    .text {
+        &.a {
+            @include sp {
+                display: none;
+            }
+        }
+        &.b {
+            @include tab {
+                display: none;
+            }
+        }
     }
 }

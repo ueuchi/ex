@@ -1,8 +1,4 @@
 #footer {
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
-    // height: 342px;
     position: relative;
     span {
         padding-top: 172px;
@@ -32,6 +28,9 @@
     display: flex;
     justify-content: space-between;
     font-size: 3vw;
+    @include sp {
+        font-size: 5vw;
+    }
     @include sp {
         width: 100%;
     }
