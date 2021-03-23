@@ -1,17 +1,18 @@
-const array = [1, 2, 3]
+const scores = [13, 67, 18, 54, 30, 22, 89, 49, 21, 65]
 
-array.splice(0, 1)
-
-console.log(array) //=> [2, 3]
-
-array.push(5)
-
-console.log(array) //=> [2, 3, 5]
-
-array.splice(1, 2)
-
-console.log(array) //=> [2]
-
-array[0] = 100
-
-console.log(array) //=> [100]
+function scoring(score) {
+    if (score >= 90) {
+      console.log('秀')
+    } else if (score >= 75) {
+      console.log('優')
+    } else if (score >= 60) {
+      console.log('良')
+    } else if (score >= 30) {
+      console.log('可')
+    } else {
+      console.log('不可')
+    }
+}
+scores.forEach((score) => {
+    console.log(scoring(score));
+})
