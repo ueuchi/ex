@@ -4,10 +4,13 @@ const list = document.querySelector('#list')
 
 addButton.addEventListener('click', (event) => {
   const newItem = document.createElement('li')
-  const listNumber = list.childElementCount
-  newItem.textContent = `アイテム${listNumber + 1}`
   list.appendChild(newItem)
+  newItem.textContent = `アイテム${list.children.length}`
 })
 removeButton.addEventListener('click', (event) => {
-  list.removeChild(list.lastElementChild)
+  if(list.children.length > 0) {
+    list.removeChild(list.lastElementChild)
+  } else {
+    console.log('要素がありません')
+  }
 })
