@@ -6,14 +6,17 @@ addButton.addEventListener('click', (event) => {
     const newItem = document.createElement('li')
     const newImg = document.createElement('img')
     const newText = document.createElement('span')
-    const listNumber = list.childElementCount
     newImg.src = "http://placehold.it/64x64"
-    newImg.alt = `アイテム${listNumber + 1}`;
-    newText.textContent = `アイテム${listNumber + 1}`
     list.appendChild(newItem)
     newItem.appendChild(newImg)
     newItem.appendChild(newText)
+    newImg.alt = `アイテム${list.children.length}`;
+    newText.textContent = `アイテム${list.children.length}`
 })
 removeButton.addEventListener('click', (event) => {
-  list.removeChild(list.lastElementChild)
+  if(list.children.length > 0) {
+    list.removeChild(list.lastElementChild)
+  } else {
+    console.log('要素がありません')
+  }
 })

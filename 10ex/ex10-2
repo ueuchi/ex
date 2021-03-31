@@ -1,0 +1,62 @@
+課題 2: JSXとHTMLのシンタックス
+JSXは、JavaScriptにHTMLライクなシンタックスを提供するものであり、 ほとんどHTMLと同じように書くことができます。 
+しかし、厳密には文法が異なる点がいくつか存在します。 JSXとHTMLの文法の違いについて、調べてみましょう。
+
+JSXでは、最上位に複数の要素を並列で配置することができない。複数の配列は以下のよう<div>で囲む。
+
+    ReactDOM.render(
+      <div>
+        <h1>Hello, world!</h1>
+        <h2>texttext</h2>
+      </div>
+      ,document.getElementById('app')
+    );
+
+JSX内にHTMLのコメントアウトは使えない。JSのコメントアウト(/* */)を使う。
+
+    {/*  comment */}
+
+空要素をは以下のように配置する。
+
+    <img src="foo.jpg" alt="" /> （「/」が必要）
+
+以下の属性は、HTMLのように記述できない。
+
+    <class>
+    <h1 className="foo">Hello, world!</h1>
+
+    <for>
+    <label htmlFor="name">Hello, world!</label>
+
+    <value>
+    <input type="text" defaultValue="aaa" />
+
+    <checked>
+    <input type="radio" name="radio1" value="1" defaultChecked="checked" />
+
+    <style>
+    <h1 style={{color:'red',fontSize:'12px'}}>Hello, world!</h1>
+
+{ }内にJavaScriptの記述ができる
+
+    const text="Hello, world!";
+    ReactDOM.render(
+      <div>
+        <h1>{text}</h1>
+        {1+2+3}
+      </div>
+      ,document.getElementById('app')
+    );
+
+スプレッド演算子を用いてオブジェクトを展開することもできる。
+
+    const props={
+      id:"bar",
+      className:"foo"
+    };
+    ReactDOM.render(
+      <div>
+        <h1 {...props}="">Hello, world!</h1>
+      </div>
+      ,document.getElementById('app')
+    );
