@@ -9,13 +9,13 @@ const InputForm = ({addTodo}) => {
 
     const add = e => {
         e.preventDefault()
-        
         if (value === ""){//タスクが空の場合
-            { alert.error('タスクの中身が空です') }//エラーメッセージを出力
+            alert.error('タスクの中身が空です')//エラーメッセージを出力
             return false//追加ボタン本来の動作をキャンセル
         }else{
             addTodo(value);    //追加ボタン本来の動作を実行
             document.task.reset() //タスクの中身をリセット
+            setValue("")
         }
     }
 
