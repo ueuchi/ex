@@ -19,4 +19,3 @@ const List = ({todos, deleteTodo}) => {
 }
 
 export default List
-
