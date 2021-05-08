@@ -1,29 +1,13 @@
 import React, {useState} from 'react'
 import { useAlert } from 'react-alert'
-import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import AddIcon from '@material-ui/icons/Add';
-import Fab from '@material-ui/core/Fab';
-import DeleteIcon from '@material-ui/icons/Delete';
-import IconButton from '@material-ui/core/IconButton';
-import Tooltip from '@material-ui/core/Tooltip';
+import FormDialog from './FormDialog';
+// import Button from '@material-ui/core/Button';
 
 const InputForm = ({addTodo}) => {
     const [value, setValue] = useState('')
     const alert = useAlert()
-    const useStyles = makeStyles((theme) => ({
-        fab: {
-          margin: theme.spacing(2),
-        },
-        absolute: {
-          position: 'absolute',
-          bottom: theme.spacing(2),
-          right: theme.spacing(3),
-        },
-    }));
-    const classes = useStyles();
 
-
+    //追加ボタンを押した時の挙動
     const add = e => {
         e.preventDefault()
         if (value === ""){//タスクが空の場合
@@ -32,31 +16,29 @@ const InputForm = ({addTodo}) => {
         }else{
             addTodo(value);    //追加ボタン本来の動作を実行
             document.task.reset() //タスクの中身をリセット
-            setValue("")
+            setValue("") //再レンダー
         }
     }
 
     return(
         <form name="task" onSubmit={add} >
-            <label>タスク</label>
+            {/* <label>タスク</label>
             <input 
                 type="text"
                 onChange={e => {
-                    setValue(e.target.value)
-                }}
+                    setValue(e.target.value)}}
             />
-            <Button
-                size="small"
-                variant="contained"
-                color="primary"
-                onClick={add}
-            >追加
-            </Button>
-            <Tooltip title="Add" aria-label="add">
-                <Fab color="secondary" className={classes.absolute}>
-                <AddIcon />
-                </Fab>
-            </Tooltip>
+        <Button
+            size="small"
+            variant="contained"
+            color="secondary"
+            onClick={add}
+        >追加
+        </Button> */}
+            <FormDialog
+                // setTodos={setTodos}
+                addTodo={addTodo}
+            />
         </form>
     )
 }
