@@ -12,7 +12,7 @@ const App = () => {
     setTodos([
         ...todos,
         {
-          content: content,
+          content,
           id: shortid.generate()
         }
     ])
