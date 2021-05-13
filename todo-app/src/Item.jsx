@@ -1,15 +1,10 @@
 import React, {useState} from 'react'
 import styles from './styles/item.module.css'
-// import styled, { css } from 'styled-components'
 import Checkbox from '@material-ui/core/Checkbox';
-// import Button from '@material-ui/core/Button';
-// import { makeStyles } from '@material-ui/core/styles';
 import DeleteIcon from '@material-ui/icons/Delete';
 import IconButton from '@material-ui/core/IconButton';
 import Tooltip from '@material-ui/core/Tooltip';
 import Rating from '@material-ui/lab/Rating';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
 
 const Item = ({content, id, deleteTodo, late, setLate}) => {
     const [isDone, setIsDone] = useState(false)
@@ -64,22 +59,22 @@ const Item = ({content, id, deleteTodo, late, setLate}) => {
     )
 }
 
-// const Span = styled.span`
-//     background: transparent;
-//     border-radius: 3px;
-//     border: 2px solid palevioletred;
-//     color: palevioletred;
-//     margin: 0.5em 1em;
-//     padding: 0.25em 1em;
+const Span = styled.span`
+    background: transparent;
+    border-radius: 3px;
+    border: 2px solid palevioletred;
+    color: palevioletred;
+    margin: 0.5em 1em;
+    padding: 0.25em 1em;
     
-//     ${props => props.primary && css`
-//         background: palevioletred;
-//         color: white;
-//     `}
-// `;
+    ${props => props.primary && css`
+        background: palevioletred;
+        color: white;
+    `}
+`;
     
-// const Container = styled.div`
-//     text-align: center;
-// `
+const Container = styled.div`
+    text-align: center;
+`
 
 export default Item

@@ -23,7 +23,7 @@ const InputForm = ({addTodo}) => {
     return(
         <form name="task" onSubmit={add} >
             <label>タスク</label>
-            <input 
+            <input
                 type="text"
                 onChange={e => {
                     setValue(e.target.value)}}
@@ -44,3 +44,7 @@ const InputForm = ({addTodo}) => {
 }
 
 export default InputForm;
+
+const Button  = Button`
+    color:
+`
