@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { useAlert } from 'react-alert'
 import FormDialog from './FormDialog';
-// import Button from '@material-ui/core/Button';
+import Button from '@material-ui/core/Button';
 
 const InputForm = ({addTodo}) => {
     const [value, setValue] = useState('')
@@ -22,7 +22,7 @@ const InputForm = ({addTodo}) => {
 
     return(
         <form name="task" onSubmit={add} >
-            {/* <label>タスク</label>
+            <label>タスク</label>
             <input 
                 type="text"
                 onChange={e => {
@@ -34,7 +34,7 @@ const InputForm = ({addTodo}) => {
             color="secondary"
             onClick={add}
         >追加
-        </Button> */}
+        </Button>
             <FormDialog
                 // setTodos={setTodos}
                 addTodo={addTodo}

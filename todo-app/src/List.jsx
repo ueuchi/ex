@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
 const List = ({todos, deleteTodo}) => {
     const classes = useStyles();
     return (
-        <StyledList>
+        // <StyledList>
         <Grid item xs={12}>
             <div style={{listStyle: 'none'}}>
                 {todos.map(todo => {
@@ -36,12 +36,13 @@ const List = ({todos, deleteTodo}) => {
                 })}
             </div>
         </Grid>
-        </StyledList>
+        // </StyledList>
     )
 }
 
 export default List
 
-const StyledList = styled.div`
-    border: 2px solid orange;
-`
+// const StyledList = styled.div`
+//     border: 2px solid orange;
+//     color: red
+// `
