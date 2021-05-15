@@ -27,6 +27,7 @@ const List = ({todos, deleteTodo}) => {
                         <Paper className={classes.paper}>
                             <Item 
                             content={todo.content} 
+                            number={todo.number}
                             id={todo.id}
                             key={todo.key}
                             deleteTodo={deleteTodo}

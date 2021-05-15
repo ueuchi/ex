@@ -20,6 +20,7 @@ import Box from '@material-ui/core/Box';
 
 export default function FormDialog({addTodo}) {
     const [value, setValue] = useState('')
+    // const [value, setValue] = useState(2)
     const [late, setLate] = useState(2);
     // const alert = useAlert()
     
@@ -28,7 +29,7 @@ export default function FormDialog({addTodo}) {
         fab: {
             margin: theme.spacing(2),
         },
-        absolute: {
+        absoluteRight: {
             position: 'absolute',
             bottom: theme.spacing(2),
             right: theme.spacing(3),
@@ -52,8 +53,10 @@ export default function FormDialog({addTodo}) {
             // alert.error('タスクの中身が空です')//エラーメッセージを出力
             return false//追加ボタン本来の動作をキャンセル
         }else{
-            addTodo(value);    //追加ボタン本来の動作を実行
-            document.task.reset() //タスクの中身をリセット
+            // addTodo(late,value);    //追加ボタン本来の動作を実行
+            addTodo(value, late);    //追加ボタン本来の動作を実行
+            // addTodo(value);    //追加ボタン本来の動作を実行
+            // document.task.reset() //タスクの中身をリセット
             setValue("") //再レンダー
             setOpen(false);
         }
@@ -63,7 +66,7 @@ export default function FormDialog({addTodo}) {
         <form onSubmit={add}>
             {/* プラスアイコン */}
             <Tooltip title="追加" aria-label="追加" onClick={handleClickOpen}>
-                <Fab color="primary" className={classes.absolute}>
+                <Fab color="primary" className={classes.absoluteRight}>
                     <AddIcon /> 
                 </Fab>
             </Tooltip>
@@ -79,6 +82,10 @@ export default function FormDialog({addTodo}) {
                         <Typography component="legend">重要度</Typography>
                         <Rating
                             name="simple-controlled"
+                            // value={value}
+                            // onChange={(event, newValue) => {
+                            //     setValue(newValue);
+                            // }}
                             late={late}
                             onChange={(event, newLate) => {
                                 setLate(newLate);

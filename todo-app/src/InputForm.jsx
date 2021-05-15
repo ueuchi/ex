@@ -1,10 +1,11 @@
 import React, {useState} from 'react'
 import { useAlert } from 'react-alert'
-import FormDialog from './FormDialog';
 import Button from '@material-ui/core/Button';
+import Checkbox from '@material-ui/core/Checkbox';
 
-const InputForm = ({addTodo}) => {
+const InputForm = ({addTodo, onChecked}) => {
     const [value, setValue] = useState('')
+    const [checked, setChecked] = useState(false);
     const alert = useAlert()
 
     //追加ボタンを押した時の挙動
@@ -20,8 +21,18 @@ const InputForm = ({addTodo}) => {
         }
     }
 
+    const handleChecked = (event) => {
+        setChecked(event.target.checked);
+        onChecked(event.target.checked)
+    };
+
     return(
         <form name="task" onSubmit={add} >
+            <Checkbox
+                checked={checked}
+                onChange={handleChecked}
+                inputProps={{ 'aria-label': 'primary checkbox' }}
+            />{"全選択ボタン\n"}
             <label>タスク</label>
             <input
                 type="text"
@@ -35,16 +46,10 @@ const InputForm = ({addTodo}) => {
             onClick={add}
         >追加
         </Button>
-            <FormDialog
-                // setTodos={setTodos}
-                addTodo={addTodo}
-            />
+            
         </form>
     )
 }
 
 export default InputForm;
 
-const Button  = Button`
-    color:
-`

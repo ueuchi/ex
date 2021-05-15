@@ -6,11 +6,10 @@ import IconButton from '@material-ui/core/IconButton';
 import Tooltip from '@material-ui/core/Tooltip';
 import Rating from '@material-ui/lab/Rating';
 
-const Item = ({content, id, deleteTodo, late, setLate}) => {
+const Item = ({content, id, deleteTodo, number}) => {
     const [isDone, setIsDone] = useState(false)
     const [checked, setChecked] = useState(false);
-    const [value, setValue] = useState(2);
-
+    const [value, setValue] = React.useState(2);
     
     //チェック入れる、打ち消し線入れる
     const handleChecked = (event) => {
@@ -40,11 +39,8 @@ const Item = ({content, id, deleteTodo, late, setLate}) => {
                 onChange={handleChecked}
                 inputProps={{ 'aria-label': 'primary checkbox' }}
             />
-            <Rating
-                name="simple-controlled"
-                setValue={setValue}
-                
-            />
+            {/* <Rating name="read-only" number={number} readOnly /> */}
+            <Rating name="read-only" value={number} readOnly />
             {/* <Container> */}
                 <span primary className={styles.contentText} style={
                     {textDecoration: isDone ? 'line-through' : 'none'}
@@ -59,22 +55,22 @@ const Item = ({content, id, deleteTodo, late, setLate}) => {
     )
 }
 
-const Span = styled.span`
-    background: transparent;
-    border-radius: 3px;
-    border: 2px solid palevioletred;
-    color: palevioletred;
-    margin: 0.5em 1em;
-    padding: 0.25em 1em;
+// const Span = styled.span`
+//     background: transparent;
+//     border-radius: 3px;
+//     border: 2px solid palevioletred;
+//     color: palevioletred;
+//     margin: 0.5em 1em;
+//     padding: 0.25em 1em;
     
-    ${props => props.primary && css`
-        background: palevioletred;
-        color: white;
-    `}
-`;
+//     ${props => props.primary && css`
+//         background: palevioletred;
+//         color: white;
+//     `}
+// `;
     
-const Container = styled.div`
-    text-align: center;
-`
+// const Container = styled.div`
+//     text-align: center;
+// `
 
 export default Item
