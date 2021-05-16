@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-// import { useAlert } from 'react-alert'
 import { makeStyles } from '@material-ui/core/styles';
 //削除アイコン表示
 import Tooltip from '@material-ui/core/Tooltip';
@@ -15,8 +14,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 
 
 export default function DeleteDialog({addTodo}) {
-    const [value, setValue] = useState('')
-    // const alert = useAlert()
+    // const [value, setValue] = useState('')
     
     //デリートボタンを位置指定
     const useStyles = makeStyles((theme) => ({
@@ -41,21 +39,26 @@ export default function DeleteDialog({addTodo}) {
     };
 
     //はいを押した時の挙動
+    // const erase = e => {
+    //     e.preventDefault()
+    //     if (value === ""){//タスクが空の場合
+    //         // alert.error('タスクの中身が空です')//エラーメッセージを出力
+    //         return false//追加ボタン本来の動作をキャンセル
+    //     }else{
+    //         addTodo(value);    //追加ボタン本来の動作を実行
+    //         document.task.reset() //タスクの中身をリセット
+    //         setValue("") //再レンダー
+    //         setOpen(false);
+    //     }
+    // }
     const erase = e => {
         e.preventDefault()
-        if (value === ""){//タスクが空の場合
-            // alert.error('タスクの中身が空です')//エラーメッセージを出力
-            return false//追加ボタン本来の動作をキャンセル
-        }else{
-            addTodo(value);    //追加ボタン本来の動作を実行
-            document.task.reset() //タスクの中身をリセット
-            setValue("") //再レンダー
-            setOpen(false);
-        }
+        window.location.reload()
+        setOpen(false);
     }
 
     return (
-        <form onSubmit={erase}>
+        <>
             {/* デリートアイコン */}
             <Tooltip title="全削除" color="primary" onClick={handleClickOpen}>
                 <IconButton aria-label="delete" className={classes.absoluteLeft}>
@@ -72,19 +75,18 @@ export default function DeleteDialog({addTodo}) {
                 <DialogTitle id="alert-dialog-title">{"全項目の削除"}</DialogTitle>
                 <DialogContent>
                 <DialogContentText id="alert-dialog-description">
-                    チェックが入った全ての項目を削除します。
-                    よろしいですか？
+                    全ての項目を削除します。よろしいですか？
                 </DialogContentText>
                 </DialogContent>
                 <DialogActions>
                 <Button onClick={handleClose} color="primary">
                     いいえ
                 </Button>
-                <Button onClick={handleClose} color="primary">
+                <Button onClick={erase} color="primary">
                     はい
                 </Button>
                 </DialogActions>
             </Dialog>
-        </form>
+        </>
     );
     }

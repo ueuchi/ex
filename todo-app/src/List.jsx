@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const List = ({todos, deleteTodo}) => {
+const List = ({todos, deleteTodo, handleChecked}) => {
     const classes = useStyles();
     return (
         // <StyledList>
@@ -26,11 +26,13 @@ const List = ({todos, deleteTodo}) => {
                     return(
                         <Paper className={classes.paper}>
                             <Item 
+                            todos={todos}
                             content={todo.content} 
                             number={todo.number}
                             id={todo.id}
                             key={todo.key}
                             deleteTodo={deleteTodo}
+                            handleChecked={handleChecked}
                             />
                         </Paper>
                     )

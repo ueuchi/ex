@@ -8,6 +8,8 @@ import Title from "./Title";
 
 const App = () => {
   const [todos, setTodos] =  useState([])
+  const [isDone, setIsDone] = useState(false)
+  const [checked, setChecked] = useState(false);
 
   // 追加ボタン
   const addTodo = (content, number) => {
@@ -26,8 +28,18 @@ const App = () => {
     setTodos(todos.filter(todo => todo.id !== id))
   }
 
+  // チェック入れる、打ち消し線入れる
+  const handleChecked = (event) => {
+    setIsDone(!isDone)
+    setChecked(event.target.checked);
+};
+
   //全選択ボタン
-  const onChecked = (check) => {
+  const onChecked = (tf) => {
+    const ElementsCount = document.getElementsByTagName("li").length; // チェックボックスの数
+    for( let i = 0 ; i<ElementsCount ; i++ ) {
+       document.getElementsByTagName("li").elements[i].checked = tf; // ON・OFFを切り替え
+    }
 
   }
 
@@ -43,6 +55,7 @@ const App = () => {
       <List 
         todos={todos}
         deleteTodo={deleteTodo}
+        handleChecked={handleChecked}
       />
       <FormDialog
           addTodo={addTodo}

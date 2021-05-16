@@ -53,9 +53,7 @@ export default function FormDialog({addTodo}) {
             // alert.error('タスクの中身が空です')//エラーメッセージを出力
             return false//追加ボタン本来の動作をキャンセル
         }else{
-            // addTodo(late,value);    //追加ボタン本来の動作を実行
             addTodo(value, late);    //追加ボタン本来の動作を実行
-            // addTodo(value);    //追加ボタン本来の動作を実行
             // document.task.reset() //タスクの中身をリセット
             setValue("") //再レンダー
             setOpen(false);
@@ -63,7 +61,7 @@ export default function FormDialog({addTodo}) {
     }
 
     return (
-        <form onSubmit={add}>
+        <>
             {/* プラスアイコン */}
             <Tooltip title="追加" aria-label="追加" onClick={handleClickOpen}>
                 <Fab color="primary" className={classes.absoluteRight}>
@@ -82,17 +80,10 @@ export default function FormDialog({addTodo}) {
                         <Typography component="legend">重要度</Typography>
                         <Rating
                             name="simple-controlled"
-                            // value={value}
-                            // onChange={(event, newValue) => {
-                            //     setValue(newValue);
-                            // }}
                             late={late}
                             onChange={(event, newLate) => {
                                 setLate(newLate);
                             }}
-                            // onChange={ e => {
-                            //     setLate(e.target.late);
-                            // }}
                         />
                     </Box>
                     <TextField
@@ -116,6 +107,6 @@ export default function FormDialog({addTodo}) {
                     </Button>
                 </DialogActions>
             </Dialog>
-        </form>
+        </>
     );
     }
