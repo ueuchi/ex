@@ -13,7 +13,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
-const Item = ({content, id, deleteTodo, number, todos}) => {
+const Item = ({content, id, deleteTodo, number, touch, addTodo, todos}) => {
     const [isDone, setIsDone] = useState(false)
     const [checked, setChecked] = useState(false);
     
@@ -22,6 +22,7 @@ const Item = ({content, id, deleteTodo, number, todos}) => {
         setIsDone(!isDone)
         setChecked(event.target.checked);
         console.log(todos)
+        // console.log(event.target.checked)
     };
 
     //ダイアログ表示。非表示
@@ -59,7 +60,7 @@ const Item = ({content, id, deleteTodo, number, todos}) => {
     //   }));
     
     return (
-        <li　style={
+        <li style={
             {textDecoration: isDone ? 'line-through' : 'none'}
         }>
             <Checkbox

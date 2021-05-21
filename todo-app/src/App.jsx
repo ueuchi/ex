@@ -1,4 +1,5 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
+import firebase from './config/firebase'
 import shortid from 'shortid'
 import InputForm from "./InputForm";
 import FormDialog from './FormDialog';
@@ -12,12 +13,13 @@ const App = () => {
   const [checked, setChecked] = useState(false);
 
   // 追加ボタン
-  const addTodo = (content, number) => {
+  const addTodo = (content, number, touch) => {
     setTodos([
         ...todos,
         {
           content,
           number,
+          touch,
           id: shortid.generate()
         }
     ])
@@ -54,6 +56,7 @@ const App = () => {
       />
       <List 
         todos={todos}
+        addTodo={addTodo}
         deleteTodo={deleteTodo}
         handleChecked={handleChecked}
       />

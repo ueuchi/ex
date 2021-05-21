@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const List = ({todos, deleteTodo, handleChecked}) => {
+const List = ({todos, addTodo, deleteTodo, handleChecked}) => {
     const classes = useStyles();
     return (
         // <StyledList>
@@ -29,8 +29,10 @@ const List = ({todos, deleteTodo, handleChecked}) => {
                             todos={todos}
                             content={todo.content} 
                             number={todo.number}
+                            touch={todo.touch}
                             id={todo.id}
                             key={todo.key}
+                            addTodo={addTodo}
                             deleteTodo={deleteTodo}
                             handleChecked={handleChecked}
                             />
