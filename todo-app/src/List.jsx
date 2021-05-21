@@ -27,9 +27,9 @@ const List = ({todos, addTodo, deleteTodo, handleChecked}) => {
                         <Paper className={classes.paper}>
                             <Item 
                             todos={todos}
-                            content={todo.content} 
+                            content={todo.content}
                             number={todo.number}
-                            touch={todo.touch}
+                            clear={todo.clear}
                             id={todo.id}
                             key={todo.key}
                             addTodo={addTodo}

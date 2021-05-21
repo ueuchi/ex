@@ -36,7 +36,7 @@ const InputForm = ({addTodo, onChecked}) => {
                 onClick={onChecked}
                 inputProps={{ 'aria-label': 'primary checkbox' }}
             />{"全選択ボタン\n"}
-            <form name="task" onSubmit={add} >
+            {/* <form name="task" onSubmit={add} >
                 <label>タスク</label>
                 <input
                     type="text"
@@ -51,7 +51,7 @@ const InputForm = ({addTodo, onChecked}) => {
             >追加
             </Button>
                 
-            </form>
+            </form> */}
         </>
     )
 }

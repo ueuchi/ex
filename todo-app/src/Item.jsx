@@ -13,15 +13,15 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
-const Item = ({content, id, deleteTodo, number, touch, addTodo, todos}) => {
+const Item = ({content, id, deleteTodo, number, clear, addTodo, todos}) => {
     const [isDone, setIsDone] = useState(false)
     const [checked, setChecked] = useState(false);
     
-    //チェック入れる、打ち消し線入れる
+    // チェック入れる、打ち消し線入れる
     const handleChecked = (event) => {
         setIsDone(!isDone)
         setChecked(event.target.checked);
-        console.log(todos)
+        console.log(todos[0].clear)
         // console.log(event.target.checked)
     };
 

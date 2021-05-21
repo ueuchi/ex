@@ -1,5 +1,6 @@
-import React, {useState, useEffect} from 'react'
-import firebase from './config/firebase'
+// import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
+// import firebase from './config/firebase'
 import shortid from 'shortid'
 import InputForm from "./InputForm";
 import FormDialog from './FormDialog';
@@ -12,20 +13,20 @@ const App = () => {
   const [isDone, setIsDone] = useState(false)
   const [checked, setChecked] = useState(false);
 
-  // 追加ボタン
-  const addTodo = (content, number, touch) => {
+  // 追加処理
+  const addTodo = (content, number, clear) => {
     setTodos([
         ...todos,
         {
           content,
           number,
-          touch,
+          clear,
           id: shortid.generate()
         }
     ])
   }
 
-  // 削除ボタン
+  // 削除処理
   const deleteTodo = id => {
     setTodos(todos.filter(todo => todo.id !== id))
   }
