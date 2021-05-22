@@ -2,7 +2,7 @@ import firebase from 'firebase/app'
 import 'firebase/auth'
 
 const firebaseConfig = {
-    // 各人の認証情報を記述
+    // 認証情報を記述
     apiKey: "AIzaSyAyJqAd5gKesU1QAcrfaO4CJkvAOkmb-TM",
     authDomain: "chat-app-304a2.firebaseapp.com",
     projectId: "chat-app-304a2",
@@ -14,4 +14,5 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig)
 
+// export const db = firebase.firestore()
 export default firebase
