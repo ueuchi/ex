@@ -20,7 +20,7 @@ const Room = () => {
     
     return (
         <>
-            <h1>Room</h1>
+            <h1>ChatRoom</h1>
             <ul>
                 <li>
                     sample user : sample message

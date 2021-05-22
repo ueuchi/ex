@@ -15,6 +15,11 @@ const App = () => {
     return (
         <AuthProvider>
             <Router>
+                {/* <ul>
+                    <li><Link to='/'></Link>Room</li>
+                    <li><Link to='/login'></Link>Login</li>
+                    <li><Link to='/signup'></Link>Signup</li>
+                </ul> */}
                 <Switch>
                     <LoggedInRoute exact path='/' component={Room} />
                     <Route exact path='/login' component={Login} />

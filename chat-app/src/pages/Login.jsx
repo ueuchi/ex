@@ -26,8 +26,8 @@ const Login = ({history}) => {
 
     return (
         <>
-            <h1>Login</h1>        
-            <form>
+            <h1>ログイン画面</h1>        
+            <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor='email'>E-mail</label>
                     <input 
@@ -46,7 +46,7 @@ const Login = ({history}) => {
                         placeholder='password' 
                     />
                 </div>
-                <button type='submit'>Login</button>
+                <button type='submit'>ログイン</button>
             </form>
         </>
     )
