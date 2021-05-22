@@ -13,6 +13,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
+// const Item = ({content, id, deleteTodo, number, clear, addTodo, todos, checked, handleChecked, isDone}) => {
 const Item = ({content, id, deleteTodo, number, clear, addTodo, todos}) => {
     const [isDone, setIsDone] = useState(false)
     const [checked, setChecked] = useState(false);
@@ -21,8 +22,6 @@ const Item = ({content, id, deleteTodo, number, clear, addTodo, todos}) => {
     const handleChecked = (event) => {
         setIsDone(!isDone)
         setChecked(event.target.checked);
-        console.log(todos[0].clear)
-        // console.log(event.target.checked)
     };
 
     //ダイアログ表示。非表示

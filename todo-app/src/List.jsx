@@ -1,6 +1,6 @@
 import React from 'react'
 import Item from './Item'
-import styled, { css } from 'styled-components'
+// import styled, { css } from 'styled-components'
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const List = ({todos, addTodo, deleteTodo, handleChecked}) => {
+const List = ({todos, addTodo, deleteTodo, handleChecked, checked, isDone}) => {
     const classes = useStyles();
     return (
         // <StyledList>
@@ -27,6 +27,8 @@ const List = ({todos, addTodo, deleteTodo, handleChecked}) => {
                         <Paper className={classes.paper}>
                             <Item 
                             todos={todos}
+                            checked={checked}
+                            isDone={isDone}
                             content={todo.content}
                             number={todo.number}
                             clear={todo.clear}

@@ -14,13 +14,14 @@ const App = () => {
   const [checked, setChecked] = useState(false);
 
   // 追加処理
-  const addTodo = (content, number, clear) => {
+  const addTodo = (content, number) => {
     setTodos([
         ...todos,
         {
           content,
           number,
-          clear,
+          checked: false,
+          isDone: false,
           id: shortid.generate()
         }
     ])
@@ -32,10 +33,27 @@ const App = () => {
   }
 
   // チェック入れる、打ち消し線入れる
+//   const handleChecked = (event, index) => {
+//     const newTodos = [...todos];
+//     newTodos[index].isDone = true;
+//     setChecked(event.target.checked);
+//     console.log(todos)
+// };
   const handleChecked = (event) => {
     setIsDone(!isDone)
     setChecked(event.target.checked);
+    console.log(todos[0].isDone)
 };
+
+// const onChangeCheck = (index) => {
+//     const newTodos = [...todos];
+//     if (newTodos[index].isDone === false) {
+//       newTodos[index].isDone = true;
+//     } else {
+//       newTodos[index].isDone = false;
+//     }
+//     setTodos(newTodos);
+//   };
 
   //全選択ボタン
   const onChecked = (tf) => {
@@ -57,6 +75,8 @@ const App = () => {
       />
       <List 
         todos={todos}
+        checked={checked}
+        isDone={isDone}
         addTodo={addTodo}
         deleteTodo={deleteTodo}
         handleChecked={handleChecked}

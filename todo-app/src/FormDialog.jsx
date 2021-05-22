@@ -21,7 +21,7 @@ import Box from '@material-ui/core/Box';
 export default function FormDialog({addTodo}) {
     const [value, setValue] = useState('')
     const [late, setLate] = useState(2);
-    const [checked, setChecked] = useState(false);
+    // const [checked, setChecked] = useState(false);
     // const alert = useAlert()
     
     //プラスボタンを位置指定
@@ -54,7 +54,7 @@ export default function FormDialog({addTodo}) {
             return false//追加ボタン本来の動作をキャンセル
         }else{
             // addTodo(value, late);    //追加ボタン本来の動作を実行
-            addTodo(value, late, checked);    //追加ボタン本来の動作を実行
+            addTodo(value, late);    //追加ボタン本来の動作を実行
             // document.task.reset() //タスクの中身をリセット
             setValue("") //再レンダー
             setOpen(false);
