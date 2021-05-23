@@ -3,12 +3,13 @@ import React, { useState, useEffect } from 'react'
 // import SignUp from './SignUp'
 import firebase from '../config/firebase'
 
-const Room = () => {
+const Room = (db) => {
     const [messages, setMessages] = useState(null)
     const [value, setValue] = useState('')
 
     useEffect(() => {
-        firebase.firestore().collection('messages')
+        // firebase.firestore().collection('messages')
+        db.collection('messages')
             .onSnapshot((snapshot) => {
                 const messages = snapshot.docs.map(doc => {
                     return doc.data()
