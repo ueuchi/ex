@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 // import Login from './Login'
 // import SignUp from './SignUp'
 import firebase from '../config/firebase'
@@ -18,6 +18,15 @@ const Room = (db) => {
                 setMessages(messages)
             })
     }, [])
+
+    const user = useContext
+
+    const handleSubmit = () => {
+        db().collection('message').add({
+            content: value,
+            user: user.displayName
+        })
+    }
     
     return (
         <>
