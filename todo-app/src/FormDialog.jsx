@@ -71,7 +71,7 @@ export default function FormDialog({addTodo}) {
             </Tooltip>
             {/* ダイアログ中身 */}
             <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
-                <DialogTitle id="form-dialog-title">タスク追加</DialogTitle>
+                <DialogTitle id="form-dialog-title">aaaaaタスク追加</DialogTitle>
                 <DialogContent>
                     <DialogContentText>
                         タスクの内容を記述してください
