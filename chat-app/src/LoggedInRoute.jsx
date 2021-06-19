@@ -8,15 +8,11 @@ const LoggedInRoute = ({ component: Component, ...rest }) => {
   return (
     <Route
       {...rest}
-      render={props =>
-        user ? (
-          <Component {...props} />
-        ) : (
-          <Redirect to={'/login'} />
-        )
+      render={(props) =>
+        user ? <Component {...props} /> : <Redirect to={'/login'} />
       }
     />
-  )
-}
+  );
+};
 
-export default LoggedInRoute
+export default LoggedInRoute;

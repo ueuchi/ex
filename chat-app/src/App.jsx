@@ -8,11 +8,7 @@ import LoggedInRoute from './LoggedInRoute'
 import 'emoji-mart/css/emoji-mart.css'
 import { Picker } from 'emoji-mart'
 
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route
-} from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 
 const App = () => {
     const [isOpne, setIsOpen] = useState(false)
@@ -26,11 +22,12 @@ const App = () => {
             {/* <Picker set='apple' /> */}
             <button onClick={handleOpen()}>emoji</button>
             <Router>
-                {/* <ul>
+                <h1>Chat App</h1>
+                <ul>
                     <li><Link to='/'></Link>Room</li>
                     <li><Link to='/login'></Link>Login</li>
                     <li><Link to='/signup'></Link>Signup</li>
-                </ul> */}
+                </ul>
                 <Switch>
                     <LoggedInRoute exact path='/' component={Room} />
                     <Route exact path='/login' component={Login} />
